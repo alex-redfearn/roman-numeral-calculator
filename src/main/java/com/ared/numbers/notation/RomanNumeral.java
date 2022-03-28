@@ -22,11 +22,13 @@ public enum RomanNumeral {
   public static int calculate(RomanNumeral... numerals) {
     int total = 0;
     int operand = 0;
-    for (RomanNumeral numeral : numerals) {
-      if (operand == 0) {
-        operand = numeral.numericValue;
+    for (int i = 0; i < numerals.length; i++) {
+      if (operand == 0 && numerals.length == i + 1) {
+        total += numerals[i].numericValue;
+      } else if (operand == 0) {
+        operand = numerals[i].numericValue;
       } else {
-        total += calculate(operand, numeral.numericValue);
+        total += calculate(operand, numerals[i].numericValue);
         operand = 0;
       }
     }
