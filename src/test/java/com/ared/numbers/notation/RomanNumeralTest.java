@@ -46,4 +46,15 @@ public class RomanNumeralTest {
   public void shouldCalculateThatDMEqualsFiveHundred() {
     assertEquals(calculate(D, M), 500);
   }
+
+  @Test
+  public void shouldCalculateThatIEqualsOne() {
+    assertEquals(calculate(I), 1);
+  }
+
+  @Test
+  public void shouldCalculateThatLXXXXEqualsNinety() {
+    assertEquals(calculate(L, X, X, X, X), 90);
+  }
+
 }
